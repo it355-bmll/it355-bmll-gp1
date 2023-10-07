@@ -78,7 +78,7 @@ There is also a make file in the general directory that will compile all files u
 - [ ] 9- OOP52-CPP. Do not delete a polymorphic object without a virtual destructor
 - [ ] 9- OOP58-CPP. Copy operations must not mutate the source object
 - [ ] 6- MEM57-CPP. Avoid using default operator new for over-aligned types
-2- EXP54-CPP. Do not access an object outside of its lifetime
+- [ ] 2- EXP54-CPP. Do not access an object outside of its lifetime
 
 
 #### Recomendations
