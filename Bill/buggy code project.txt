@@ -1,0 +1,159 @@
+#include <iostream>
+// EXP53 do not read uninitialized memory  
+void f() {
+  int i = 0;
+  std::cout << i;
+}
+
+
+#include <iostream>
+#include <nlohmann/json.hpp>
+// EXP 60 do not pass non standard type layout object across execution boundaries
+
+struct NonStandardLayout {
+    int a;
+    char b;
+    double c;
+};
+
+
+int main() {
+    NonStandardLayout myObject;
+    myObject.a = 42;
+    myObject.b = 'A';
+    myObject.c = 3.14;
+
+
+    nlohmann::json json = {
+        {"a", myObject.a},
+        {"b", myObject.b},
+        {"c", myObject.c}
+    };
+
+
+    NonStandardLayout reconstructedObject;
+    reconstructedObject.a = json["a"];
+    reconstructedObject.b = json["b"];
+    reconstructedObject.c = json["c"];
+
+
+    return 0;
+}
+
+
+int main() {
+// CTR50 Guarantee that container indices and interators are within valid range
+
+  std::vector<int> myTable = {1, 2, 3, 4, 5};
+
+
+  try {
+    insert_in_table(myTable, 2, 42);  // This will succeed
+    insert_in_table(myTable, 10, 42); // This will throw an exception
+  } catch (const std::out_of_range& e) {
+    // Handle the exception here, e.g., print an error message
+    std::cerr << "Error: " << e.what() << std::endl;
+  }
+
+
+  return 0;
+}
+
+#include <deque>
+//CTR51 use valid references pointers iterators to reference elements of a container
+
+void f(const double *items, std::size_t count) {
+  std::deque<double> d;
+  for (std::size_t i = 0; i < count; ++i) {
+    d.push_back(items[i] + 41.0);
+  }
+}
+
+
+#include <iostream>
+#include <iterator>
+#include <algorithm>
+#include <vector>
+// CTR52 guarantee library functions do not overflow 
+int main()
+{
+  std::vector<int> v;
+  std::generate_n(
+    std::back_insert_iterator<std::vector<int>>(v), 
+    10, [n=0]() mutable { return ++n; }           
+  );
+ 
+  for (int n : v)
+    std::cout << n << ' ';
+  std::cout << '\n';
+}
+
+
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+
+void f(const std::vector<int> &c) {
+// CTR 53 use valid iterator range
+  std::for_each(c.begin(), c.end(), [](int i) { std::cout << i << ' '; });
+  std::cout << '\n'; // Add a newline to separate the output from the rest of the program.
+}
+
+#include <cstddef>
+#include <iostream>
+//CTR54 do not subtract iterators that do not refer to the same container
+
+template <typename Ty>
+bool in_range(const Ty *test, const Ty *r, size_t n) {
+  return (test >= r) && (test < r + n);
+}
+
+
+void f() {
+  double foo[10];
+  double *x = &foo[0];
+  double bar;
+  std::cout << std::boolalpha << in_range(&bar, x, 10);
+}
+
+#include <iostream>
+#include <vector>
+//CTR55 do not use an additive operator on an iteratorif it would result in overflow
+
+int main() {
+    std::vector<int> myVector = {1, 2, 3, 4, 5};
+    
+    for (auto it = myVector.begin(); it != myVector.end(); ++it) {
+     
+        std::cout << *it << " ";
+    }
+    
+    return 0;
+
+#include <iostream>
+//CTR56 do not use pointer arithmetic on polymorphic objects
+
+// Define S and T structures
+struct S {
+  int i;
+  // other members if needed
+};
+
+
+struct T {
+  // members of T
+};
+
+
+void f(const S *someSes, std::size_t count) {
+  for (std::size_t i = 0; i < count; ++i) {
+    std::cout << someSes[i].i << std::endl;
+  }
+}
+
+
+int main() {
+  S test[5]; // Use an array of S, not T
+  f(test, 5);
+}
