@@ -1,0 +1,2 @@
+
+int MyCoolFunction() noexcept(true);
