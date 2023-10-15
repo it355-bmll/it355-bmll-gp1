@@ -1,32 +1,29 @@
 #include <iostream>
-#include <nlohmann/json.hpp>
+
 // EXP 60 do not pass non standard type layout object across execution boundaries
 
-struct NonStandardLayout {
+struct S {
     int a;
     char b;
     double c;
 };
+//forces structure to be immutable
+static_assert(std::is_standard_layout<S>::value, "S is required to be a std layout Type");
+
+//Different File implementation
+int func(S &s){
+    //code that uses standard layout
+    return 0;
+};
 
 
 int main() {
-    NonStandardLayout myObject;
+    S myObject;
     myObject.a = 42;
     myObject.b = 'A';
     myObject.c = 3.14;
 
-
-    nlohmann::json json = {
-        {"a", myObject.a},
-        {"b", myObject.b},
-        {"c", myObject.c}
-    };
-
-
-    NonStandardLayout reconstructedObject;
-    reconstructedObject.a = json["a"];
-    reconstructedObject.b = json["b"];
-    reconstructedObject.c = json["c"];
+    func(myObject);
 
 
     return 0;

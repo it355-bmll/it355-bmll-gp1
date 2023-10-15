@@ -1,26 +1,31 @@
 #include <iostream>
 //CTR56 do not use pointer arithmetic on polymorphic objects
 
+using namespace std;
+
 // Define S and T structures
 struct S {
-  int i;
+  int i = 0;
   // other members if needed
 };
 
 
-struct T {
+struct T : S{
+  int j = 2;
+  int i = 1;
   // members of T
 };
 
 
-void f(const S *someSes, std::size_t count) {
-  for (std::size_t i = 0; i < count; ++i) {
-    std::cout << someSes[i].i << std::endl;
+void f(S** someSes, size_t count) {
+  //This makes the function complient as we use the pointer system to increment through a polymorphic object array
+  for (size_t i = 0; i < count; i++) {
+    cout << someSes[i]->i << endl;
   }
 }
 
 
 int main() {
-  S test[5]; // Use an array of S, not T
+  S *test[5] = { new S,  new T,  new S,  new T,  new S}; // Use an array of S, not T
   f(test, 5);
 }
