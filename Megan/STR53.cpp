@@ -11,7 +11,7 @@ int main() {
     std::size_t stringLength = s.length();
     std::size_t i = get_index(s);
 
-    if (i < stringLength) { //verifies that the value
+    if (i < stringLength) { //verifies that the value is within bounds
         s[i] = 'C';
         std::cout << "Modified string: " << s << std::endl;
     } else {
