@@ -18,7 +18,7 @@ class A{
             throw num;
         } catch (int e){
             cout << "ERR: DECONSTRUCTION OF A HAS CAUSED AN EXCEPTION: "<< e << endl;
-            //If Exception Escapes the catch block inside of a deconstructor it will 
+            //If Exception Escapes the catch block inside of a deconstructor it will climb call stack
             return;
         } 
     }
