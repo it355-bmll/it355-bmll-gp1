@@ -3,8 +3,8 @@
 
 using namespace std;
 
-int insert_in_table(int arr[], int index, int val){
-  int size = sizeof(arr);
+int insert_in_table(vector<int> arr, int index, int val){
+  int size = arr.size();
   if(index < size){
     arr[index] = val;
     return 0;
@@ -16,7 +16,7 @@ int insert_in_table(int arr[], int index, int val){
 int main() {
 // CTR50 Guarantee that container indices and interator are within valid range
 
-  int myTable[5] = {1, 2, 3, 4, 5};
+  vector<int> myTable = {1, 2, 3, 4, 5};
 
 
   try {

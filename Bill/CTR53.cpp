@@ -13,7 +13,7 @@ void f(const vector<int> &c) {
 
 
 int main(){
-  vector test = {1,2,3,4,5};
+  vector<int> test = {1,2,3,4,5};
   f(test);
 
   return 0;
