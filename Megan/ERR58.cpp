@@ -2,11 +2,11 @@
 #include <string>
 #include <cstdlib>
 
-class A {
+class K {
   public:
-    A(){
+    K(){
       try {
-        std::cout << "in constructor\n";
+        std::cout << "works";
       }
       catch (...){
         std::cout << "exception caught";
@@ -18,7 +18,7 @@ class A {
 
 int main (){
   try{
-    A obj;
+    K obj;
   }
   catch(...){
     std::cout<<"exception caught in main";
