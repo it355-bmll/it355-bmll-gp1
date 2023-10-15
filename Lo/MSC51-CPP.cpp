@@ -10,7 +10,7 @@
 /**
  * @brief Main function to generate and print a random number.
 */
-void main() {
+int main() {
     // Create a random_device object for a cryptographically secure source of randomness
     std::random_device rd;
     
@@ -25,5 +25,7 @@ void main() {
 
     // Outputs to the terminal "Random number: [random_number]"
     std::cout << "Random number: " << random_number << "\n";
+
+    return 0;
 
 }
