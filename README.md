@@ -138,7 +138,8 @@ There is also a make file in the general directory that will compile all files u
 25. MEM52
 26. EXP53
 27. ERR59
-28. EXP60
+28. STR52
+29. EXP60
 
 #### Recommendations
 1. ERR04
@@ -146,3 +147,5 @@ There is also a make file in the general directory that will compile all files u
 3. DCL00
 4. DCL07
 5. MEM01
+6. MEM06
+7. MEM11

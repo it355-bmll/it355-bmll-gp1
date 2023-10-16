@@ -18,6 +18,7 @@ using namespace std;
 //ERR55 Exceptions are honored as they aren't thrown
 //EXP60 No Classes are passed outside of Execution
 //FIO50 is complied as files are not used
+//MEM06
 int main(){
     //DCL00 is met by rate being constant
     std::cout << "Starting" <<endl;
@@ -75,7 +76,7 @@ int main(){
         //CTR56 Using Key rather then pointer arithmetic to search for objects
         if(accounts[*it] != nullptr){
             //MEM53 Objects are explicitly Deconstructed
-            std::cout << "Account " << *it << " has " << accounts[*it]->getBalance() << endl;
+            std::cout << "Account " << *it << " of "<< accounts[*it]->getName() << " has " << accounts[*it]->getBalance() << endl;
             (accounts[*it])->~Account(); //OOP52-CPP - Deletes polymorphic job with a virtual destructor
              //MEM51-CPP - Properly deallocates dynamically allocated resources by descoping buffer
             accounts[*it] = nullptr; //MEM50-CPP - Does not access freed memory

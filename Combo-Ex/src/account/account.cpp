@@ -16,6 +16,10 @@ bool Account::setBalance(double newBalance){
     return true;
 };
 
+std::string Account::getName(){
+    return this->name;
+};
+
 
 Account::~Account(){
         //Deconstructor is compliant with OOP52
