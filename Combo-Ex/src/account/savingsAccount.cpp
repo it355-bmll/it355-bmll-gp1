@@ -5,6 +5,7 @@ SavingsAccount::SavingsAccount(int id, std::string name,double rate) : Account(i
     this->rate = rate;
 };
 
+//ESP50-CPP - this function does not rely on the order of evaluation
 double SavingsAccount::addInterest(){
     double currBal = this->getBalance();
     double newBal = currBal + (currBal * rate);    
