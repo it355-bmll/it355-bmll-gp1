@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <sys/resource.h>
-//Setting size of core dump to 0 to ensure no data accidentally leaks out
 
 
 class SecretData {
@@ -19,7 +18,7 @@ private:
 };
 
 int main() {
-    
+    //Setting size of core dump to 0 to ensure no data accidentally leaks out
     struct rlimit limit;
     limit.rlim_cur = 0;
     limit.rlim_max = 0;
