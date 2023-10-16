@@ -47,5 +47,5 @@ int main(){
         accounts[*it] = nullptr; //MEM50-CPP - Does not access freed memory
     }
 
-    return 0;
+    return 0; //choosing return as a termination strategy fulfills ERR04-C
 }
