@@ -3,7 +3,7 @@
 
 /**
  * 
- * @file API07.c
+ * @file API07.cpp
  * @brief Example for SEI C Recommendation API07 "Enforce Type Safety"
  * @author Levi Bottomley
  * 

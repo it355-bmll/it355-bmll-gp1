@@ -3,7 +3,7 @@
 
 /**
  * 
- * @file EXP12.c
+ * @file EXP12.cpp
  * @brief Example for SEI C Recommendation EXP12 "Do not Ignore values returned by functions"
  * @author Levi Bottomley
  * 

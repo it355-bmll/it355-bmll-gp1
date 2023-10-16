@@ -1,5 +1,11 @@
 #include <iostream>
-
+/**
+ * 
+ * @file DCL57.cpp
+ * @brief Example for SEI C++ Rule DCL57 "Do not let Exception escape deconstructor"
+ * @author Levi Bottomley
+ * 
+ */
 using namespace std;
 
 class A{
