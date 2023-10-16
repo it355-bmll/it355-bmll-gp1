@@ -42,9 +42,9 @@ int main(){
 
 
     for(auto it = keys.begin(); it < keys.end();it++){
-        (accounts[*it])->~Account();
-        free(accounts[*it]);
-        accounts[*it] = nullptr;
+        (accounts[*it])->~Account(); //OOP52-CPP - Deletes polymorphic job with a virtual destructor
+        free(accounts[*it]); //MEM51-CPP - Preoperly deallocates dynamically allocated resources
+        accounts[*it] = nullptr; //MEM50-CPP - Does not access freed memory
     }
 
     return 0;
