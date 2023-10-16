@@ -2,15 +2,15 @@
 #include <string>
 
 
-account::account(int accNum,std::string name){
+Account::Account(int accNum,std::string name){
         this->accountNum = accNum;
         this->name = name;
 };
 
-double account::getBalance(){
+double Account::getBalance(){
         return this->bal;
 };
 
-bool account::setBalance(double newBalance){
+bool Account::setBalance(double newBalance){
     this->bal = newBalance;
-}
+};

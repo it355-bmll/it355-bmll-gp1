@@ -2,9 +2,10 @@
 #ifndef CACC_H_
 #define CACC_H_ 1
 
-class checkingAccount: virtual public account{
+class CheckingAccount: virtual public Account{
     public:
+        CheckingAccount(int id, std::string name);
         double deduct(double amt);
-}
+};
 
 #endif
