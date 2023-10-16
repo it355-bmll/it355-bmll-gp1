@@ -19,14 +19,19 @@ int main(){
     "Rishi"
     };
     std::unordered_map<std::string,Account*> accounts;
+    std::vector<string> keys;
 
     for(int i = 0; i < size(names);i++){
         bool inserted = true;
-        Account *savings = new SavingsAccount(i,name[i],rate);
-        Account *checking= new CheckingAccount(i,name[i]);
-
+        Account *savings = new SavingsAccount(i,names[i],rate);
+        Account *checking= new CheckingAccount(i,names[i]);
         accounts.insert({to_string(i) + "-S",savings});
+        keys.push_back(to_string(i) + "-S");
         accounts.insert({to_string(i) + "-C",checking});
+        keys.push_back(to_string(i) + "-C");
     }
+
+
+
     return 0;
 }
