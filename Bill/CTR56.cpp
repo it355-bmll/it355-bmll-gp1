@@ -26,6 +26,6 @@ void f(S** someSes, size_t count) {
 
 
 int main() {
-  S *test[5] = { new S,  new T,  new S,  new T,  new S}; // Use an array of S, not T
+  S *test[5] = { new S,  new T,  new S,  new T,  new S};
   f(test, 5);
 }

@@ -99,7 +99,7 @@ There is also a make file in the general directory that will compile all files u
 ##### Levi
 - [x] API00-C Functions Should validate parameters
 - [x] API07-C Enforce Type Safety
-- [x] EXP09-C Use size of to determine the size of a type or varaible
+- [x] EXP09-C Use size of to determine the size of a type or variable
 - [x] EXP12-C Do not ignore values return by functions
 
 ##### Lo
@@ -111,3 +111,41 @@ There is also a make file in the general directory that will compile all files u
 
 
 #### Rules in Combined Example
+1. MEM57
+2. DCL57
+3. DCL58
+4. ERR58
+5. ERR56
+6. STR50
+7. STR51
+8. EXP55
+9. CTR53
+10. CTR54
+11. CTR55
+12. CTR50
+13. CTR51
+14. CTR56
+15. OOP52
+16. MEM51
+17. MEM50
+18. MEM56
+19. STR53
+20. ESP50
+21. MSC51
+22. EXP54
+23. MEM53
+24. ERR55
+25. MEM52
+26. EXP53
+27. ERR59
+28. STR52
+29. EXP60
+
+#### Recommendations
+1. ERR04
+2. EXP19
+3. DCL00
+4. DCL07
+5. MEM01
+6. MEM06
+7. MEM11
