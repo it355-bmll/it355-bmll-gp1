@@ -1,6 +1,6 @@
 CC=g++
 CC_REC= gcc
-FLAGS=-Wall -g
+FLAGS=-Wall -g -std=c++17
 LIBS =
 RM=rm
 BUILD_L = ./build.log
@@ -51,16 +51,16 @@ $(RULE_9):
 	$(CC) $(FLAGS) ./$(RULE_9).cpp -o rule_$(RULE_9) $(LIBS) 2>> $(BUILD_L)
 
 $(REC_1):
-	$(CC_REC) $(FLAGS) ./$(REC_1).c -o rec_$(REC_1) $(LIBS) 2>> $(BUILD_L)
+	$(CC) $(FLAGS) ./$(REC_1).cpp -o rec_$(REC_1) $(LIBS) 2>> $(BUILD_L)
 
 $(REC_2):
-	$(CC_REC) $(FLAGS) ./$(REC_2).c -o rec_$(REC_2) $(LIBS) 2>> $(BUILD_L)
+	$(CC) $(FLAGS) ./$(REC_2).cpp -o rec_$(REC_2) $(LIBS) 2>> $(BUILD_L)
 
 $(REC_3):
-	$(CC_REC) $(FLAGS) ./$(REC_3).c -o rec_$(REC_3) $(LIBS) 2>> $(BUILD_L)
+	$(CC) $(FLAGS) ./$(REC_3).cpp -o rec_$(REC_3) $(LIBS) 2>> $(BUILD_L)
 
 $(REC_4):
-	$(CC_REC) $(FLAGS) ./$(REC_4).c -o rec_$(REC_4) $(LIBS) 2>> $(BUILD_L)
+	$(CC) $(FLAGS) ./$(REC_4).cpp -o rec_$(REC_4) $(LIBS) 2>> $(BUILD_L)
 
 
 clean:

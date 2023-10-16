@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * 
- * @file API00.c
+ * @file API00.cpp
  * @brief Example for SEI C Recommendation API00 "Functions should validate Parameters"
  * @author Levi Bottomley
  * 

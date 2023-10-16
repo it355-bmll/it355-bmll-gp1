@@ -1,6 +1,6 @@
 CC=g++
 CC_REC= gcc
-FLAGS=-Wall -g
+FLAGS=-Wall -g -std=c++17
 LIBS =
 RM=rm
 BUILD_L = ./build.log

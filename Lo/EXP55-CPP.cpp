@@ -12,6 +12,9 @@ int main() {
     // constantReferenceToConstantVariable = 10; // If we uncomment this line, the program won't compile since we already declared that the reference was constant
 
     std::cout << "Value: " << constantVariable << std::endl;
+    
+    // Levi: Printing to ignore G++ warning for unused variable
+    std::cout << "Ref: " << constantReferenceToConstantVariable <<std::endl;
 
     return 0;
 }

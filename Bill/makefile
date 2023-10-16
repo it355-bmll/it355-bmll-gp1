@@ -1,5 +1,5 @@
 CC=g++
-FLAGS=-Wall -g
+FLAGS=-Wall -g  -std=c++17
 LIBS =
 RM=rm
 BUILD_L = ./build.log
@@ -13,9 +13,10 @@ RULE_6 = CTR53
 RULE_7 = CTR54
 RULE_8 = CTR55
 RULE_9 = CTR56
+REC = REC
 
 
-all: $(RULE_1) $(RULE_2) $(RULE_3) $(RULE_4) $(RULE_5) $(RULE_6) $(RULE_7) $(RULE_8) $(RULE_9)
+all: $(RULE_1) $(RULE_2) $(RULE_3) $(RULE_4) $(RULE_5) $(RULE_6) $(RULE_7) $(RULE_8) $(RULE_9) $(REC)
 	echo "Build Successful" >> ${BUILD_L}
 
 $(RULE_1):
@@ -45,5 +46,8 @@ $(RULE_8):
 $(RULE_9):
 	$(CC) $(FLAGS) ./$(RULE_9).cpp -o rule_$(RULE_9) $(LIBS) 2>> $(BUILD_L)
 
+$(REC):
+	$(CC) $(FLAGS) ./$(REC).cpp -o $(REC) $(LIBS) 2>> $(BUILD_L)
+
 clean:
-	$(RM) rule_$(RULE_1) rule_$(RULE_2) rule_$(RULE_3) rule_$(RULE_4) rule_$(RULE_5) rule_$(RULE_6) rule_$(RULE_7) rule_$(RULE_8) rule_$(RULE_9) $(BUILD_L) $(OUTPUT_L)
+	$(RM) rule_$(RULE_1) rule_$(RULE_2) rule_$(RULE_3) rule_$(RULE_4) rule_$(RULE_5) rule_$(RULE_6) rule_$(RULE_7) rule_$(RULE_8) rule_$(RULE_9) $(REC) $(BUILD_L) $(OUTPUT_L)
