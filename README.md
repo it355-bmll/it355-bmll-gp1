@@ -99,7 +99,7 @@ There is also a make file in the general directory that will compile all files u
 ##### Levi
 - [x] API00-C Functions Should validate parameters
 - [x] API07-C Enforce Type Safety
-- [x] EXP09-C Use size of to determine the size of a type or varaible
+- [x] EXP09-C Use size of to determine the size of a type or variable
 - [x] EXP12-C Do not ignore values return by functions
 
 ##### Lo
