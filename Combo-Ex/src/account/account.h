@@ -2,7 +2,6 @@
 #include <string>
 #ifndef ACC_H_
 #define ACC_H_ 1
-#include <checkingAccount.h>
 
 class Account{
     protected:
@@ -13,6 +12,7 @@ class Account{
         Account(int accNum, std::string name);
         double getBalance();
         bool setBalance(double newBal);
+        virtual ~Account();
 };
 
 

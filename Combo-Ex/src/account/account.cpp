@@ -15,6 +15,6 @@ bool Account::setBalance(double newBalance){
     this->bal = newBalance;
 };
 
-virtual ~Account() {
+Account::~Account() {
         //Deconstructor is compliant with OOP52
 };

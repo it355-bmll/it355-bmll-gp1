@@ -26,25 +26,31 @@ int main(){
     std::map<std::string,Account*> accounts;
     std::vector<string> keys;
 
-    for(int i = 0; i < size(names);i++){
-        bool inserted = true;
+    for(size_t i = 0; i < size(names);i++){
 
         Account *savings = new SavingsAccount(i,names[i],rate); //not being accessed through cv-unqualified type, so EXP55-CPP is good
         Account *checking= new CheckingAccount(i,names[i]);
 
         accounts.insert({to_string(i) + "-S",savings});
         keys.push_back(to_string(i) + "-S");
-        
+
         accounts.insert({to_string(i) + "-C",checking});
         keys.push_back(to_string(i) + "-C");
     }
 
 
-
+    //CTR53 Using valid ranges for the iterator
+    //CTR54 Iterator is not subtracted from unrelated
+    //CTR55 Iterator doesn't get added into overflowing
     for(auto it = keys.begin(); it < keys.end();it++){
-        (accounts[*it])->~Account();
-        free(accounts[*it]);
-        accounts[*it] = nullptr;
+        //CTR50 Checking if index exists in accounts
+        //CTR51 Valid Reference to Account Elements
+        //CTR 56 Using Key rather then pointer arithmetic to search for objects
+        if(accounts[*it] != nullptr){
+            (accounts[*it])->~Account();
+            free(accounts[*it]);
+            accounts[*it] = nullptr;
+        }
     }
 
     return 0;
