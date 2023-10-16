@@ -111,3 +111,23 @@ There is also a make file in the general directory that will compile all files u
 
 
 #### Rules in Combined Example
+1. MEM57
+2. DCL58
+3. ERR58
+4. ERR56
+5. STR50
+6. STR51
+7. EXP55
+8. CTR53
+9. CTR54
+10. CTR55
+11. CTR50
+12. CTR51
+13. CTR56
+14. OOP52
+15. MEM51
+16. MEM50
+17. ESP50
+
+#### Recommendations
+1. ERR04

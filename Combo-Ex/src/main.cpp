@@ -45,13 +45,12 @@ int main(){
     for(auto it = keys.begin(); it < keys.end();it++){
         //CTR50 Checking if index exists in accounts
         //CTR51 Valid Reference to Account Elements
-        //CTR 56 Using Key rather then pointer arithmetic to search for objects
+        //CTR56 Using Key rather then pointer arithmetic to search for objects
         if(accounts[*it] != nullptr){
-            (accounts[*it])->~Account();
-            free(accounts[*it]);
-            accounts[*it] = nullptr;
+            (accounts[*it])->~Account(); //OOP52-CPP - Deletes polymorphic job with a virtual destructor
+            free(accounts[*it]); //MEM51-CPP - Preoperly deallocates dynamically allocated resources
+            accounts[*it] = nullptr; //MEM50-CPP - Does not access freed memory
         }
-    }
 
-    return 0;
+    return 0; //choosing return as a termination strategy fulfills ERR04-C
 }
