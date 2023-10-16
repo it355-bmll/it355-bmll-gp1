@@ -12,6 +12,7 @@ using namespace std;
  */
 
 struct T : std::enable_shared_from_this<T>{
+    //This allows a cloned version of the shared pointer that is not owned to prevent deallocation issues
     std::shared_ptr<T> x() {return shared_from_this();};
 };
 
