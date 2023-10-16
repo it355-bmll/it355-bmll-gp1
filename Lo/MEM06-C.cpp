@@ -1,3 +1,9 @@
+/**
+ * @file MEM06-C.cpp
+ * @brief A C++ program that demonstrates compliance with the MEM06-C recommendation by ensuring sensitive data does not leak.
+ * 
+ */
+
 #include <iostream>
 #include <fstream>
 #include <string>
