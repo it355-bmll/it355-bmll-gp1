@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -10,6 +11,13 @@ using namespace std;
  * 
  */
 
+struct T : std::enable_shared_from_this<T>{
+    std::shared_ptr<T> x() {return shared_from_this();};
+};
+
 int main(){
+    std::shared_ptr<T> structure1 = std::make_shared<T>();
+    std::shared_ptr<T> structure2 = structure1->x();
+
     return 0;
 }
