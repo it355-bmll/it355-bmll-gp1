@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <unordered_map>
+#include <vector>
 #include "account/account.h"
 #include "account/checkingAccount.h"
 #include "account/savingsAccount.h"
@@ -18,7 +18,7 @@ int main(){
     "Jonathan",
     "Rishi"
     };
-    std::unordered_map<std::string,Account*> accounts;
+    std::map<std::string,Account*> accounts;
     std::vector<string> keys;
 
     for(int i = 0; i < size(names);i++){
@@ -32,6 +32,12 @@ int main(){
     }
 
 
+
+    for(auto it = keys.begin(); it < keys.end();it++){
+        (accounts[*it])->~Account();
+        free(accounts[*it]);
+        accounts[*it] = nullptr;
+    }
 
     return 0;
 }
