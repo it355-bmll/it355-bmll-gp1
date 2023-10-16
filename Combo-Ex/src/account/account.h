@@ -12,7 +12,8 @@ class Account{
         Account(int accNum, std::string name);
         double getBalance();
         bool setBalance(double newBal);
-        virtual ~Account();
+        //DCL57 is met by decontructor not throwing
+        virtual ~Account() noexcept(true);
 };
 
 

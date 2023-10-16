@@ -7,4 +7,7 @@ OUTPUT = ./output.log
 OUT_N = COMBO_EX
 
 all:
-		$(CC) $(FLAGS) ./src/main.cpp ./src/account/*.h -o $(OUT_N) $(LIBS) 2>> $(BUILD_L)
+		$(CC) $(FLAGS) ./src/main.cpp ./src/account/*.cpp ./src/account/*.h -o $(OUT_N) $(LIBS) 2>> $(BUILD_L)
+
+clean:
+	$(RM) $(OUT_N) $(BUILD_L)

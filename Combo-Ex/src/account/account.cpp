@@ -1,4 +1,4 @@
-#include <account.h>
+#include "account.h"
 #include <string>
 
 
@@ -13,8 +13,10 @@ double Account::getBalance(){
 
 bool Account::setBalance(double newBalance){
     this->bal = newBalance;
+    return true;
 };
 
-Account::~Account() {
+
+Account::~Account(){
         //Deconstructor is compliant with OOP52
 };

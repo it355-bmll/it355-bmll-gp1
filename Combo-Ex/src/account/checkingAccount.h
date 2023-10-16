@@ -1,4 +1,4 @@
-#include "./account.h"
+#include "account.h"
 #ifndef CACC_H_
 #define CACC_H_ 1
 

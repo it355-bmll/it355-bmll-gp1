@@ -10,5 +10,5 @@ double CheckingAccount::deduct(double amt){
         this->setBalance(newBal);
         return newBal;
     } 
-    return -1;
+    return -1.0;
 };
